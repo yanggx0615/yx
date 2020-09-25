@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PersistentConfig">
+    <option name="historyConfigList">
+      <map>
+        <entry key="click">
+          <value>
+            <Config>
+              <option name="comment" value="true" />
+              <option name="daoMvnPath" value="" />
+              <option name="daoName" value="" />
+              <option name="daoPackage" value="" />
+              <option name="daoPostfix" value="" />
+              <option name="modelMvnPath" value="src/main/java" />
+              <option name="modelName" value="Click" />
+              <option name="modelPackage" value="cn.yx.bean" />
+              <option name="name" value="click" />
+              <option name="overrideJava" value="true" />
+              <option name="overrideXML" value="true" />
+              <option name="primaryKey" value="Click_Id" />
+              <option name="projectFolder" value="$PROJECT_DIR$" />
+              <option name="tableName" value="click" />
+              <option name="useLombokPlugin" value="true" />
+              <option name="useSchemaPrefix" value="true" />
+              <option name="xmlMvnPath" value="" />
+              <option name="xmlPackage" value="" />
+            </Config>
+          </value>
+        </entry>
+        <entry key="collect">
+          <value>
+            <Config>
+              <option name="comment" value="true" />
+              <option name="daoMvnPath" value="" />
+              <option name="daoName" value="" />
+              <option name="daoPackage" value="" />
+              <option name="daoPostfix" value="" />
+              <option name="modelMvnPath" value="src/main/java" />
+              <option name="modelName" value="Collect" />
+              <option name="modelPackage" value="cn.yx.bean" />
+              <option name="name" value="collect" />
+              <option name="overrideJava" value="true" />
+              <option name="overrideXML" value="true" />
+              <option name="primaryKey" value="Collect_Id" />
+              <option name="projectFolder" value="$PROJECT_DIR$" />
+              <option name="tableName" value="collect" />
+              <option name="useLombokPlugin" value="true" />
+              <option name="useSchemaPrefix" value="true" />
+              <option name="xmlMvnPath" value="" />
+              <option name="xmlPackage" value="" />
+            </Config>
+          </value>
+        </entry>
+        <entry key="comment">
+          <value>
+            <Config>
+              <option name="comment" value="true" />
+              <option name="daoMvnPath" value="" />
+              <option name="daoName" value="" />
+              <option name="daoPackage" value="" />
+              <option name="daoPostfix" value="" />
+              <option name="modelMvnPath" value="src/main/java" />
+              <option name="modelName" value="Comment" />
+              <option name="modelPackage" value="cn.yx.bean" />
+              <option name="name" value="comment" />
+              <option name="overrideJava" value="true" />
+              <option name="overrideXML" value="true" />
+              <option name="primaryKey" value="Comment_Id" />
+              <option name="projectFolder" value="$PROJECT_DIR$" />
+              <option name="tableName" value="comment" />
+              <option name="useLombokPlugin" value="true" />
+              <option name="useSchemaPrefix" value="true" />
+              <option name="xmlMvnPath" value="" />
+              <option name="xmlPackage" value="" />
+            </Config>
+          </value>
+        </entry>
+        <entry key="data">
+          <value>
+            <Config>
+              <option name="comment" value="true" />
+              <option name="daoMvnPath" value="" />
+              <option name="daoName" value="" />
+              <option name="daoPackage" value="" />
+              <option name="daoPostfix" value="" />
+              <option name="modelMvnPath" value="src/main/java" />
+              <option name="modelName" value="Data" />
+              <option name="modelPackage" value="cn.yx.bean" />
+              <option name="name" value="data" />
+              <option name="overrideJava" value="true" />
+              <option name="overrideXML" value="true" />
+              <option name="primaryKey" value="Data_Id" />
+              <option name="projectFolder" value="$PROJECT_DIR$" />
+              <option name="tableName" value="data" />
+              <option name="useLombokPlugin" value="true" />
+              <option name="useSchemaPrefix" value="true" />
+              <option name="xmlMvnPath" value="" />
+              <option name="xmlPackage" value="" />
+            </Config>
+          </value>
+        </entry>
+        <entry key="user">
+          <value>
+            <Config>
+              <option name="comment" value="true" />
+              <option name="daoMvnPath" value="" />
+              <option name="daoName" value="" />
+              <option name="daoPackage" value="" />
+              <option name="daoPostfix" value="" />
+              <option name="modelMvnPath" value="src/main/java" />
+              <option name="modelName" value="User" />
+              <option name="modelPackage" value="cn.yx.bean" />
+              <option name="name" value="user" />
+              <option name="overrideJava" value="true" />
+              <option name="overrideXML" value="true" />
+              <option name="primaryKey" value="Username" />
+              <option name="projectFolder" value="$PROJECT_DIR$" />
+              <option name="tableName" value="user" />
+              <option name="useLombokPlugin" value="true" />
+              <option name="useSchemaPrefix" value="true" />
+              <option name="xmlMvnPath" value="" />
+              <option name="xmlPackage" value="" />
+            </Config>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
