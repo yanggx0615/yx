@@ -3,12 +3,14 @@ package cn.yx.bean;
 import java.io.Serializable;
 import java.util.Date;
 import lombok.Data;
+import lombok.experimental.Accessors;
 
 /**
  * user
  * @author 杨国祥
  */
 @Data
+@Accessors(chain = true)
 public class User implements Serializable {
     /**
      * 用户名

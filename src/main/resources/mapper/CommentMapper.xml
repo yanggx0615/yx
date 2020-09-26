@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.yx.mapper.CommentMapper">
+    <sql id="Base_Column_List">
+        Comment_Id,D_Id,Username,Comment_Dat
+    </sql>
+
+    <insert id="add" parameterType="cn.yx.bean.Comment">
+        insert into comment values (#{comment.commentId},#{comment.did},#{comment.username},#{comment.commentDate},#{comment.message})
+    </insert>
+
+    <delete id="drop" >
+        delete from comment where Comment_Id = #{commentId}
+    </delete>
+
+    <select id="findByDid" resultType="cn.yx.bean.Comment">
+        select <include refid="Base_Column_List"/>
+        from comment
+        where D_Id = #{did}
+        order by `Comment_Date` DESC
+    </select>
+
+    <select id="dindByUser" resultType="cn.yx.bean.Comment">
+        select <include refid="Base_Column_List"/>
+        from comment
+        where Username =#{username}
+        order by `Comment_Date` DESC
+    </select>
+</mapper>

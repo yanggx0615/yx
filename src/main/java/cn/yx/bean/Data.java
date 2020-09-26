@@ -1,5 +1,7 @@
 package cn.yx.bean;
 
+import lombok.experimental.Accessors;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -7,6 +9,7 @@ import java.util.Date;
  * data
  * @author 杨国祥
  */
+@Accessors(chain = true)
 @lombok.Data
 public class Data implements Serializable {
     /**
@@ -43,6 +46,11 @@ public class Data implements Serializable {
      * 审核状态
      */
     private String status;
+
+    /**
+     * 作者
+     */
+    private String author;
 
     private static final long serialVersionUID = 1L;
 }
