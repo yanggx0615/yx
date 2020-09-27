@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.yx.mapper.DataMapper">
+    <resultMap id="BaseResultMap" type="cn.yx.bean.Data">
+        <id column="Data_Id" jdbcType="VARCHAR" property="dataId" />
+        <result column="Name" jdbcType="VARCHAR" property="name" />
+        <result column="Data_Date" jdbcType="DATE" property="dataDate" />
+        <result column="Hits" jdbcType="INTEGER" property="hits" />
+        <result column="Collection" jdbcType="INTEGER" property="collection" />
+        <result column="Type" jdbcType="VARCHAR" property="type" />
+        <result column="Status" jdbcType="VARCHAR" property="status" />
+    </resultMap>
+    <sql id="Base_Column_List">
+        Data_Id, `Name`, Data_Date, Hits, `Collection`, `Type`, `Status`
+    </sql>
+    <insert id="add" parameterType="cn.yx.bean.Data">
+        insert into data (<include refid="Base_Column_List"/>)values(#{data.dataId},#{data.name},
+        #{data.dataDate},#{data.hits},#{data.collection},#{data.type},#{data.status})
+    </insert>
+    <select id="findByType" resultType="cn.yx.bean.Data">
+        select <include refid="Base_Column_List"/> from data where Type = #{type}
+    </select>
+</mapper>

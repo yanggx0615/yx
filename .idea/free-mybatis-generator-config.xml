@@ -79,10 +79,10 @@
           <value>
             <Config>
               <option name="comment" value="true" />
-              <option name="daoMvnPath" value="" />
-              <option name="daoName" value="" />
-              <option name="daoPackage" value="" />
-              <option name="daoPostfix" value="" />
+              <option name="daoMvnPath" value="src/main/java" />
+              <option name="daoName" value="DataDao" />
+              <option name="daoPackage" value="cn.yx.mapper" />
+              <option name="daoPostfix" value="Dao" />
               <option name="modelMvnPath" value="src/main/java" />
               <option name="modelName" value="Data" />
               <option name="modelPackage" value="cn.yx.bean" />
@@ -94,8 +94,8 @@
               <option name="tableName" value="data" />
               <option name="useLombokPlugin" value="true" />
               <option name="useSchemaPrefix" value="true" />
-              <option name="xmlMvnPath" value="" />
-              <option name="xmlPackage" value="" />
+              <option name="xmlMvnPath" value="src/main/resources" />
+              <option name="xmlPackage" value="generator" />
             </Config>
           </value>
         </entry>

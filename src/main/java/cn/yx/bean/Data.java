@@ -5,7 +5,7 @@ import java.util.Date;
 
 /**
  * data
- * @author 杨国祥
+ * @author 
  */
 @lombok.Data
 public class Data implements Serializable {
