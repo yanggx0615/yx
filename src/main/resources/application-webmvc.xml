@@ -30,6 +30,14 @@
         </mvc:message-converters>
     </mvc:annotation-driven>
 
+    <!--  拦截器  -->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**/"/>
+            <bean class="cn.yx.controller.LoginInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
     <!--  视图解析器  -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/views/"/>

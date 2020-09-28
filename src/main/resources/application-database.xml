@@ -19,17 +19,35 @@
         <property name="password" value="${jdbc.password}"/>
     </bean>
 
+    <!--  SqlSessionFactoryBean  -->
     <bean class="org.mybatis.spring.SqlSessionFactoryBean" name="sqlSessionFactory">
+        <!--   分页的配置     -->
+        <property name="plugins">
+            <array>
+                <bean class="com.github.pagehelper.PageInterceptor">
+                    <property name="properties">
+                        <props>
+                            <prop key="helperDialect">mysql</prop>
+                        </props>
+                    </property>
+                </bean>
+            </array>
+        </property>
+        <!--  数据源  -->
         <property name="dataSource" ref="dataSource"/>
+        <!--   别名     -->
         <property name="typeAliasesPackage" value="cn.ygx.bean"/>
+        <!--    mapperxml    -->
         <property name="mapperLocations" value="classpath:/mapper/*.xml"/>
+        <!--    配置对象    -->
         <property name="configuration">
             <bean class="org.apache.ibatis.session.Configuration">
                 <property name="mapUnderscoreToCamelCase" value="true"/>
             </bean>
         </property>
     </bean>
-    
+
+    <!--  mapper  -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="cn.yx.mapper"/>
     </bean>
