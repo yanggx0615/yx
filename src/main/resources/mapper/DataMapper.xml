@@ -15,11 +15,66 @@
     <sql id="Base_Column_List">
         Data_Id, `Name`, Data_Date, Hits, `Collection`, `Type`, `Status`
     </sql>
+
+    <!--  添加数据 add  -->
     <insert id="add" parameterType="cn.yx.bean.Data">
-        insert into data (<include refid="Base_Column_List"/>)values(#{data.dataId},#{data.name},
-        #{data.dataDate},#{data.hits},#{data.collection},#{data.type},#{data.status})
+        insert into data (<include refid="Base_Column_List"/>)
+        values(#{data.dataId},#{data.name},#{data.dataDate},#{data.hits},#{data.collection}
+        ,#{data.type},#{data.status})
     </insert>
-    <select id="findByType" resultType="cn.yx.bean.Data">
-        select <include refid="Base_Column_List"/> from data where Type = #{type}
+
+    <!--  查找指定类型的数据并根据时间排序  -->
+    <select id="sortordByDate" resultType="cn.yx.bean.Data">
+        select <include refid="Base_Column_List"/>
+        from data
+        <where>
+            <if test="user!=null">
+                 author=#{user.username}
+            </if>
+            and Type = #{type} and Status = #{status}
+        </where>
+        order by `Data_Date` DESC
     </select>
+
+    <!--  查找指定类型的数据并根据点击量排序  -->
+    <select id="sortordByHits" resultType="cn.yx.bean.Data">
+        select <include refid="Base_Column_List"/>
+        from data
+        <where>
+            <if test="user!=null">
+                author=#{user.username}
+            </if>
+            and Type = #{type} and Status = #{status}
+        </where>
+        order by `Hits` DESC
+    </select>
+
+    <!--  查找指定类型的数据并根据收藏量排序  -->
+    <select id="sortordByCollection" resultType="cn.yx.bean.Data">
+        select <include refid="Base_Column_List"/>
+        from data
+        <where>
+            <if test="user!=null">
+                author=#{user.username}
+            </if>
+            and Type = #{type} and Status = #{status}
+        </where>
+        order by `Collection` DESC
+    </select>
+
+    <!--  增加点击量  -->
+    <update id="addHits">
+        update data set Hits=Hits+1 where Data_Id = #{dataId}
+    </update>
+
+    <!--  增加收藏量  -->
+    <update id="addCollection">
+        update data set Collection=Collection+1 where Data_Id = #{dataId}
+    </update>
+
+    <!--  修改状态  -->
+    <update id="updateStatus">
+        update data set Status = #{status} where Data_Id = #{dataId}
+    </update>
+
 </mapper>
