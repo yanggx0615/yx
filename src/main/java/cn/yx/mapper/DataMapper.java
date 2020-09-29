@@ -8,7 +8,11 @@ import java.util.List;
 
 public interface DataMapper {
 
-    //上传数据
+    /**
+     * 增加数据
+     * @param data 数据
+     * @return 受影响的行数
+     */
     int add(@Param("data") Data data);
 
     /**
@@ -52,6 +56,12 @@ public interface DataMapper {
      */
     int addCollection(String dataId);
 
+    /**
+     * 根据数据编号修改状态
+     * @param status 状态
+     * @param dataId 数据编号
+     * @return 受影响行数
+     */
     int updateStatus(@Param("status") String status,@Param("dataId") String dataId);
 
 }

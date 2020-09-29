@@ -11,16 +11,17 @@
         <result column="Collection" jdbcType="INTEGER" property="collection" />
         <result column="Type" jdbcType="VARCHAR" property="type" />
         <result column="Status" jdbcType="VARCHAR" property="status" />
+        <result column="author" jdbcType="VARCHAR" property="author"/>
     </resultMap>
     <sql id="Base_Column_List">
-        Data_Id, `Name`, Data_Date, Hits, `Collection`, `Type`, `Status`
+        Data_Id, `Name`, Data_Date, Hits, `Collection`, `Type`, `Status`, `author`
     </sql>
 
     <!--  添加数据 add  -->
     <insert id="add" parameterType="cn.yx.bean.Data">
         insert into data (<include refid="Base_Column_List"/>)
         values(#{data.dataId},#{data.name},#{data.dataDate},#{data.hits},#{data.collection}
-        ,#{data.type},#{data.status})
+        ,#{data.type},#{data.status},#{data.author})
     </insert>
 
     <!--  查找指定类型的数据并根据时间排序  -->

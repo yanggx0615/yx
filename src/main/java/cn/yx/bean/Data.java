@@ -1,13 +1,17 @@
 package cn.yx.bean;
 
+import lombok.experimental.Accessors;
+
 import java.io.Serializable;
 import java.util.Date;
 
 /**
  * data
- * @author 
+ * @author 杨国祥
  */
+@Accessors(chain = true)
 @lombok.Data
+
 public class Data implements Serializable {
     /**
      * 数据编号
