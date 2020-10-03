@@ -11,6 +11,7 @@ import java.util.Date;
  */
 @Accessors(chain = true)
 @lombok.Data
+
 public class Data implements Serializable {
     /**
      * 数据编号
