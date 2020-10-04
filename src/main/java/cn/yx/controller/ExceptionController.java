@@ -24,22 +24,22 @@ public class ExceptionController {
      * @param response 响应对象
      * @return 返回JSON或者返回视图
      */
-    @ExceptionHandler(NoHandlerFoundException.class)
-    public Object noHandlerFoundException(NoHandlerFoundException e, HttpServletResponse response){
-        String accept = response.getHeader("accept");
-        if(accept.contains(MediaType.APPLICATION_JSON_VALUE)){
-            Map<String,Object> map = new HashMap<>();
-            map.put("url",e.getRequestURL());
-            map.put("method",e.getHttpMethod());
-            return new ResponseEntity(map, HttpStatus.NOT_FOUND);
-        }else{
-            ModelAndView modelAndView =new ModelAndView("forward:/error/404",HttpStatus.NOT_FOUND);
-            modelAndView.addObject("url",e.getRequestURL());
-            modelAndView.addObject("method",e.getHttpMethod());
-            return modelAndView;
-
-        }
-    }
+//    @ExceptionHandler(NoHandlerFoundException.class)
+//    public Object noHandlerFoundException(NoHandlerFoundException e, HttpServletResponse response){
+//        String accept = response.getHeader("accept");
+//        if(accept.contains(MediaType.APPLICATION_JSON_VALUE)){
+//            Map<String,Object> map = new HashMap<>();
+//            map.put("url",e.getRequestURL());
+//            map.put("method",e.getHttpMethod());
+//            return new ResponseEntity(map, HttpStatus.NOT_FOUND);
+//        }else{
+//            ModelAndView modelAndView =new ModelAndView("forward:/error/404",HttpStatus.NOT_FOUND);
+//            modelAndView.addObject("url",e.getRequestURL());
+//            modelAndView.addObject("method",e.getHttpMethod());
+//            return modelAndView;
+//
+//        }
+//    }
 
 
 

@@ -1,5 +1,6 @@
 package cn.yx.mapper;
 
+import cn.yx.bean.Collect;
 import cn.yx.bean.User;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
@@ -26,5 +27,10 @@ public interface UserInfoMapper {
      */
     void UserReset(@Param("username1") String username1,@Param("phone") Integer phone,@Param("portrait") String portrait,@Param("username") String username);
 
-
+    /**
+     * 查询我的收藏
+     * @param username 用户名
+     * @return
+     */
+    List<Collect> findMyCollect(String username);
 }

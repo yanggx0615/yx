@@ -1,5 +1,6 @@
 package cn.yx.controller;
 
+import cn.yx.bean.Collect;
 import cn.yx.bean.User;
 import cn.yx.service.UserInfoService;
 import org.springframework.ui.Model;
@@ -41,6 +42,7 @@ public class UserInfoController {
     @GetMapping("/find")
     public ModelAndView findUser(HttpServletRequest request){
         ModelAndView modelAndView = new ModelAndView("userInfo/userMessage");
+        //测试，设一个user
         request.getSession().setAttribute("user",userInfoService.findUser("123"));
         User user1 = (User) request.getSession().getAttribute("user");
         User user = userInfoService.findUser(user1.getUsername());
@@ -75,19 +77,20 @@ public class UserInfoController {
         String username = user.getUsername();
         String portrait = null;
         //文件上传
-        String path = servletContext.getRealPath("head");
-        File head = new File(path);
-        if(!head.exists()){
-            head.mkdirs();
-        }
-        try {
-            File file1 = new File(head, file.getOriginalFilename());
-            portrait = file1.getAbsolutePath();
-            System.out.println(portrait);
-            file.transferTo(Paths.get(file1.getAbsolutePath()));
-        } catch (IOException e) {
-            e.printStackTrace();
-            redirectAttributes.addFlashAttribute("error","文件上传出错");
+        if (!file.isEmpty()){
+            String path = servletContext.getRealPath("head");
+            File head = new File(path);
+            if(!head.exists()){
+                head.mkdirs();
+            }
+            try {
+                File file1 = new File(head, file.getOriginalFilename());
+                portrait = file1.getName();
+                file.transferTo(Paths.get(file1.getAbsolutePath()));
+            } catch (IOException e) {
+                e.printStackTrace();
+                redirectAttributes.addFlashAttribute("error","文件上传出错");
+            }
         }
         //获取form中的信息
         String username1 = request.getParameter("username1");
@@ -100,7 +103,7 @@ public class UserInfoController {
 //        }else if(portrait==null){
 //            portrait=user.getPortrait();
 //        }
-        if (portrait==null){
+        if (portrait == null){
             portrait=user.getPortrait();
         }
         User user1 = userInfoService.findUser(username1);
@@ -118,9 +121,14 @@ public class UserInfoController {
         return modelAndView;
     }
 
-//    @GetMapping("/userInfo")
-//    public ModelAndView home(){
-//        System.out.println("1");
-//        return new ModelAndView("userInfo/UserInfo");
-//    }
+
+    @GetMapping("/collect")
+    public ModelAndView findMyCollect(HttpServletRequest request){
+        User user = (User)request.getSession().getAttribute("user");
+        String username = user.getUsername();
+        List<Collect> list = userInfoService.findMyCollect(username);
+        ModelAndView modelAndView = new ModelAndView("userInfo/userCollect");
+        modelAndView.addObject(list);
+        return modelAndView;
+    }
 }

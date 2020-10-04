@@ -1,5 +1,6 @@
 package cn.yx.service.impl;
 
+import cn.yx.bean.Collect;
 import cn.yx.bean.User;
 import cn.yx.mapper.UserInfoMapper;
 import cn.yx.service.UserInfoService;
@@ -32,5 +33,15 @@ public class UserInfoServiceImpl implements UserInfoService {
      */
     public void UserReset(String username1,Integer phone,String portrait,String username){
         userInfoMapper.UserReset(username1,phone,portrait,username);
+    }
+
+    /**
+     * 查询我的收藏
+     * @param username 用户名
+     * @return
+     */
+    @Override
+    public List<Collect> findMyCollect(String username) {
+        return userInfoMapper.findMyCollect(username);
     }
 }

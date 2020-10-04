@@ -3,15 +3,23 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.yx.mapper.UserInfoMapper">
-    <sql id="base_col">
+    <!-- 用户字段 -->
+    <sql id="base_user">
         Username,`Password`,Phone,Portrait,`Unlock`
     </sql>
+    <!-- 收藏 -->
+    <sql id="base_coll">
+        Collect_Id,D_Id,Username,Collect_Date
+    </sql>
     <update id="UserReset">
-        update user set Username=#{username1},Phone=#{phone},Portrait=#{portrait} where Username=${username}
+        update user set Username=#{username1},Phone=#{phone},Portrait=#{portrait} where Username=#{username}
     </update>
 
     <select id="findUser" resultType="cn.yx.bean.User">
-        select <include refid="base_col"/> from user where Username=#{username}
+        select <include refid="base_user"/> from user where Username=#{username}
+    </select>
+    <select id="findMyCollect" resultType="cn.yx.bean.Collect">
+        select <include refid="base_coll"/> from collect where Username = #{username}
     </select>
 
 </mapper>

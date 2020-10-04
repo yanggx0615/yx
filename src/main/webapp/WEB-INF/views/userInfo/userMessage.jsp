@@ -24,7 +24,7 @@
 <body>
     <ul id="ul">
         <li>头像:</li>
-        <li>${user.portrait}</li>
+        <li><img src="/images/${user.portrait}" width="100px" height="100px"/></li>
         <li>昵称:&nbsp;${user.username}</li>
         <li>电话:&nbsp;${user.phone}</li>
         <li><a id="a" href="${pageContext.request.contextPath}/userInfo/sets" style="text-decoration:none">修改</a></li>
