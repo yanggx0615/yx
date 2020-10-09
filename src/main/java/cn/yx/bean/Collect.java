@@ -30,5 +30,10 @@ public class Collect implements Serializable {
      */
     private Date collectDate;
 
+    /**
+     * 数据的实体对象
+     */
+    private cn.yx.bean.Data data;
+
     private static final long serialVersionUID = 1L;
 }

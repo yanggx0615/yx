@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: mikan
-  Date: 2020/10/4
-  Time: 17:54
+  Date: 2020/10/7
+  Time: 17:42
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -13,7 +13,7 @@
     <title>Title</title>
 </head>
 <style>
-    .uu{
+    #u{
         padding-top: 120px;
         margin-left: 40%;
         font-size: 20px;
@@ -26,14 +26,13 @@
     li{
         line-height: 30px;
     }
-    #a{color: cadetblue}
+    #a{background-color: cadetblue}
 </style>
 <body>
-<ul id="u" class="uu">
-    <c:forEach items="${pageInfo.list}" var="collect">
-        <li>名称:<a id="a" href="<c:url value='data.jsp'/>">${collect.data.name}</a></li>
-        <li>作者:${collect.data.author}</li>
-        <li>发布日期:${collect.collectDate}</li>
+<ul id="u">
+    <c:forEach items="${pageInfo.list}" var="data">
+        <li><span>作品名称:</span><a id="a" href="<c:url value='data.jsp'/>">${data.name}</a></li>
+        <li><span>发布时间:</span>${data.dataDate}</li>
         <li>-------------------------------------------------------</li>
     </c:forEach>
 </ul>

@@ -1025,37 +1025,41 @@ BACKUP_ADMIN,BINLOG_ADMIN,CONNECTION_ADMIN,ENCRYPTION_KEY_ADMIN,GROUP_REPLICATIO
       <DataType>varchar(5)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="311" parent="286" name="PRIMARY">
+    <column id="311" parent="286" name="author">
+      <Position>8</Position>
+      <DataType>varchar(32)|0s</DataType>
+    </column>
+    <key id="312" parent="286" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>Data_Id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="312" parent="287" name="Username">
+    <column id="313" parent="287" name="Username">
       <Position>1</Position>
       <DataType>varchar(32)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="313" parent="287" name="Password">
+    <column id="314" parent="287" name="Password">
       <Position>2</Position>
       <DataType>varchar(32)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="314" parent="287" name="Phone">
+    <column id="315" parent="287" name="Phone">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="315" parent="287" name="Portrait">
+    <column id="316" parent="287" name="Portrait">
       <Position>4</Position>
       <DataType>varchar(80)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="316" parent="287" name="Unlock">
+    <column id="317" parent="287" name="Unlock">
       <Position>5</Position>
       <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="317" parent="287" name="PRIMARY">
+    <key id="318" parent="287" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>Username</ColNames>
       <Primary>1</Primary>

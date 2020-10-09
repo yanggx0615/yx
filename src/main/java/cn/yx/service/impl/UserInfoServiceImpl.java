@@ -1,6 +1,7 @@
 package cn.yx.service.impl;
 
 import cn.yx.bean.Collect;
+import cn.yx.bean.Data;
 import cn.yx.bean.User;
 import cn.yx.mapper.UserInfoMapper;
 import cn.yx.service.UserInfoService;
@@ -43,5 +44,14 @@ public class UserInfoServiceImpl implements UserInfoService {
     @Override
     public List<Collect> findMyCollect(String username) {
         return userInfoMapper.findMyCollect(username);
+    }
+
+    /**
+     * 查看我的发布
+     * @param username 用户名
+     * @return
+     */
+    public List<Data> findMyData(String username){
+        return userInfoMapper.findMyData(username);
     }
 }

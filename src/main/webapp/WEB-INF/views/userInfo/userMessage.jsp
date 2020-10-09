@@ -12,7 +12,8 @@
     <title>Title</title>
 </head>
 <style>
-    #ul{
+    #u{
+        padding-top: 140px;
         margin-left: 45%;
         font-size: 20px;
     }
@@ -22,7 +23,7 @@
     #a{background-color: cadetblue}
 </style>
 <body>
-    <ul id="ul">
+    <ul id="u">
         <li>头像:</li>
         <li><img src="/images/${user.portrait}" width="100px" height="100px"/></li>
         <li>昵称:&nbsp;${user.username}</li>

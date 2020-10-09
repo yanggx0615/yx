@@ -11,6 +11,12 @@
     <title>Title</title>
     <link rel="stylesheet" href="https://www.layuicdn.com/layui/css/layui.css">
 </head>
+<style>
+    .layui-nav-tree{
+        margin: 0px;
+        float: left;
+    }
+</style>
 <body>
 <ul class="layui-nav layui-nav-tree" lay-filter="test">
     <!-- 侧边导航: <ul class="layui-nav layui-nav-tree layui-nav-side"> -->
@@ -18,8 +24,8 @@
         <a style=”opacity:0.2”>用户主页</a>
         <dl class="layui-nav-child">
             <dd><a href="${pageContext.request.contextPath}/userInfo/find">用户详情</a></dd>
-            <dd><a href="javascript:;">我的收藏</a></dd>
-            <dd><a href="">已发布</a></dd>
+            <dd><a href="${pageContext.request.contextPath}/userInfo/collect">我的收藏</a></dd>
+            <dd><a href="${pageContext.request.contextPath}/userInfo/myData">已发布</a></dd>
             <dd><a href="">发布</a></dd>
         </dl>
     </li>

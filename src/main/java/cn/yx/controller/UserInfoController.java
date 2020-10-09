@@ -1,8 +1,11 @@
 package cn.yx.controller;
 
 import cn.yx.bean.Collect;
+import cn.yx.bean.Data;
 import cn.yx.bean.User;
 import cn.yx.service.UserInfoService;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -122,13 +125,55 @@ public class UserInfoController {
     }
 
 
+    /**
+     * 查看我的收藏
+     * @param request
+     * @return
+     */
     @GetMapping("/collect")
     public ModelAndView findMyCollect(HttpServletRequest request){
+        //获取username
         User user = (User)request.getSession().getAttribute("user");
         String username = user.getUsername();
+        //查询分页
         List<Collect> list = userInfoService.findMyCollect(username);
         ModelAndView modelAndView = new ModelAndView("userInfo/userCollect");
         modelAndView.addObject(list);
+        String pageNum = request.getParameter("pageNum");
+        if(pageNum == null){
+            pageNum="1";
+        }
+        PageHelper.startPage(new Integer(pageNum),5);
+        PageInfo<Collect> pageInfo = new PageInfo<>(list);
+        System.out.println(pageInfo);
+        request.setAttribute("pageInfo",pageInfo);
+        request.setAttribute("method","findCollect");
+        System.out.println("................");
+        return modelAndView;
+    }
+
+    /**
+     * 查看我的发布
+     * @param request
+     * @return
+     */
+    @GetMapping("/myData")
+    public ModelAndView findMyData(HttpServletRequest request){
+        User user = (User)request.getSession().getAttribute("user");
+        String username = user.getUsername();
+
+        List<Data> list = userInfoService.findMyData(username);
+        ModelAndView modelAndView = new ModelAndView("userInfo/userData");
+        modelAndView.addObject(list);
+        String pageNum = request.getParameter("pageNum");
+        if(pageNum == null){
+            pageNum="1";
+        }
+        PageHelper.startPage(new Integer(pageNum),5);
+        PageInfo<Collect> pageInfo = new PageInfo(list);
+        System.out.println(pageInfo);
+        request.setAttribute("pageInfo",pageInfo);
+        request.setAttribute("method","findData");
         return modelAndView;
     }
 }

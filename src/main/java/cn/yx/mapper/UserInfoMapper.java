@@ -1,10 +1,12 @@
 package cn.yx.mapper;
 
 import cn.yx.bean.Collect;
+import cn.yx.bean.Data;
 import cn.yx.bean.User;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -33,4 +35,11 @@ public interface UserInfoMapper {
      * @return
      */
     List<Collect> findMyCollect(String username);
+
+    /**
+     * 查看我的发布
+     * @param username 用户名
+     * @return
+     */
+    List<Data> findMyData(String username);
 }
